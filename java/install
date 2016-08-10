@@ -17,11 +17,11 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 tar -zxvf jdk-8u45-linux-x64.tar.gz
 cd jdk1.8.0_45 
 
-export JAVA_HOME="/opt/java/jdk1.8.0_45"
-export PATH="$JAVA_HOME/bin:$PATH"
+echo 'export JAVA_HOME="/opt/java/jdk1.8.0_45"' > /etc/profile
+echo 'export PATH="$JAVA_HOME/bin:$PATH"' > /etc/profile
+source /etc/profile
 
 cp $SOURCE_DIR/java/Procfile $SOURCE_DIR/default/Procfile
-
 rm -rf /var/lib/tomcat7/webapps
 ln -s ${CURRENT_DIR} /var/lib/tomcat7/webapps
 mkdir -p /usr/share/tomcat7/common/classes /usr/share/tomcat7/server/classes /usr/share/tomcat7/shared/classes
