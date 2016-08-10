@@ -9,7 +9,7 @@ SOURCE_DIR=/var/lib/tsuru
 source ${SOURCE_DIR}/base/rc/config
 
 apt-get update
-apt-get install -y openjdk-7-jdk maven tomcat7
+apt-get install -y openjdk-8-jdk maven tomcat7
 
 cp $SOURCE_DIR/java/Procfile $SOURCE_DIR/default/Procfile
 
